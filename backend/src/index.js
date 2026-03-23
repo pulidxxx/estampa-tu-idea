@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
@@ -29,3 +30,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port);
 console.log(`Server on port ${port}`);
+
+export default app;

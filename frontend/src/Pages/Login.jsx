@@ -47,7 +47,7 @@ function Login() {
           email = emailAdapter.convertirEmailAMinuscula(cliente.email);
           console.log(email);
           if (tipoUsuario == "Cliente") {
-            const res = await fetch(`http://localhost:4000/clients/${email}`);
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/clients/${email}`);
             if (res.ok) {
               const data = await res.json();
               cliente.nombre = data.nombre;
@@ -75,7 +75,7 @@ function Login() {
               // Mostrar la alerta en caso de error
             }
           } else if (tipoUsuario == "Artista") {
-            const res = await fetch(`http://localhost:4000/artists/${email}`);
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/artists/${email}`);
             if (res.ok) {
               const data = await res.json();
               cliente.nombre = data.nombre;

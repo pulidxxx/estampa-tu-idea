@@ -40,7 +40,7 @@ export default function FormEstampado() {
       const formData = new FormData();
       formData.append("file", file);
 
-      fetch("http://localhost:4000/image", {
+      fetch(`${import.meta.env.VITE_API_URL}/image`, {
         method: "POST",
         body: formData,
       })
@@ -69,7 +69,7 @@ export default function FormEstampado() {
   }, [estampado.diseño]);
 
   const toDB = () => {
-    fetch("http://localhost:4000/estampado", {
+    fetch(`${import.meta.env.VITE_API_URL}/estampado`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(estampado),

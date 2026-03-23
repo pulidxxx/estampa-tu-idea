@@ -21,7 +21,7 @@ function CatalogoEstampados() {
 
   useEffect(() => {
     // Llamar al endpoint para obtener los estampados
-    fetch("http://localhost:4000/getEstampados") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
+    fetch(`${import.meta.env.VITE_API_URL}/getEstampados`)
       .then((response) => response.json())
       .then((data) => {
         if (data.rowCount != 0) {

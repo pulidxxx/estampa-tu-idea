@@ -41,7 +41,7 @@ function OffcanvasCamisa() {
 
     try {
       const res = await fetch(
-        `http://localhost:4000/materialQuantity/${material}`
+        `${import.meta.env.VITE_API_URL}/materialQuantity/${material}`
       );
       if (res.ok) {
         const data = await res.json();
@@ -108,7 +108,7 @@ function OffcanvasCamisa() {
   };
 
   const restarCantidad = async (material, cantidad) => {
-    fetch("http://localhost:4000/updateQuantity", {
+    fetch(`${import.meta.env.VITE_API_URL}/updateQuantity`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
