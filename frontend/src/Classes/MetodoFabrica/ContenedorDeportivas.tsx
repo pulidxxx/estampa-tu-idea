@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import CartaComponent from "../../Components/ComponentCarta";
-import { useGeneral } from "../../Utils/generalContext";
+import { useGeneral } from "../../Utils/GeneralContext";
 import Contenedor from "./Contenedor";
 
 class ContenedorDeportivas extends Contenedor {

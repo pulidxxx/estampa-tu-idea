@@ -1,4 +1,4 @@
-import { useGeneral } from "../Utils/generalContext";
+import { useGeneral } from "../Utils/GeneralContext";
 import Offcanvas from "react-bootstrap/Offcanvas";
 // eslint-disable-next-line no-unused-vars
 import { useEffect, useState } from "react";
