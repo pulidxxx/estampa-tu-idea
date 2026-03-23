@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Classes/Header/Header";
 import Footer from "../Components/Footer";
 import ThemeSwitcher from "../Components/ThemeSwitcher";
-import "../Styles/pago.css";
+import "../Styles/Pago.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
