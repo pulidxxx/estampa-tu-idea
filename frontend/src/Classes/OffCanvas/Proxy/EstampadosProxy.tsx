@@ -3,21 +3,22 @@ import EstampadosServiceImpl from "./EstampadosServiceImpl";
 
 // Proxy para el acceso a los estampados
 class EstampadosProxy implements EstampadosService {
-  private estampadosService: EstampadosService;
-  private estampadosCache: any[];
+    private estampadosService: EstampadosService;
+    private estampadosCache: any[];
 
-  constructor() {
-    this.estampadosService = new EstampadosServiceImpl();
-    this.estampadosCache = [];
-  }
-
-  // Método que devuelve los estampados si no existen en caché, y si existen, los devuelve de la caché
-  async getEstampados(): Promise<any> {
-    if (this.estampadosCache.length === 0) {
-      this.estampadosCache = await this.estampadosService.getEstampados();
+    constructor() {
+        this.estampadosService = new EstampadosServiceImpl();
+        this.estampadosCache = [];
     }
-    return this.estampadosCache;
-  }
+
+    // Método que devuelve los estampados si no existen en caché, y si existen, los devuelve de la caché
+    async getEstampados(): Promise<any> {
+        if (this.estampadosCache.length === 0) {
+            const result = await this.estampadosService.getEstampados();
+            this.estampadosCache = Array.isArray(result) ? result : [];
+        }
+        return this.estampadosCache;
+    }
 }
 
 export default EstampadosProxy;

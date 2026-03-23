@@ -45,7 +45,7 @@ export const getEstampados = async (req, res, next) => {
       }));
       res.json(estampadosConNombreArtista);
     } else {
-      res.json(estampados);
+      res.json([]);
     }
   } catch (error) {
     res.status(500).json({ error: error.message });

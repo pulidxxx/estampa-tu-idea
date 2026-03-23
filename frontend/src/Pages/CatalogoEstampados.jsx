@@ -24,11 +24,10 @@ function CatalogoEstampados() {
     fetch(`${import.meta.env.VITE_API_URL}/getEstampados`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.rowCount != 0) {
-          setEstampados(data); // Establecer los estampados en el estado local
+        if (Array.isArray(data) && data.length > 0) {
+          setEstampados(data);
         } else {
           console.log("no hay estampados");
-          console.log(estampados.length);
         }
       })
       .catch((error) => {
